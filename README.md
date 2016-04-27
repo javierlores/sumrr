@@ -11,7 +11,7 @@ it is implemented properly.
 
 Current ROUGE scores
 
-| F_Score | Precision | Recall |
+| | F_Score | Precision | Recall |
 |---|---:|---:|---:|
 |ROUGE 1   | 0.349120 | 0.355460 | 0.345130
 |ROUGE 2   | 0.076890 | 0.078720 | 0.075770
