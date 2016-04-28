@@ -1,5 +1,5 @@
 # Tyler Truong 3221610
-# two
+# Javier Lores 3075171
 # three
 # Professor Fei Liu
 # NLP
@@ -105,7 +105,7 @@ def summarize(casepath, sum_len, Y):
         a = sim1[idx[~selected]]
         b = sim2[idx[~selected]]
         b = b[:,idx[selected]].max()
-        pick = (Y * a - (1-Y) * b).argmax()
+        pick = idx[~selected][(Y * a - (1-Y) * b).argmax()]
         selected[pick] = True
         summr_len += text_lens[pick]
     summr = text[idx[selected]]
