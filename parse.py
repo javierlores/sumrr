@@ -13,7 +13,7 @@ import os
 import re
 
 # extracted from average char length of human summaries
-SUMMARY_LENGTH = 600
+SUMMARY_LENGTH = 650
 
 # doesn't appear to do anything. The length might be too small, so there
 # is not enough room for deviations to happen.
@@ -105,7 +105,11 @@ def summarize(casepath, sum_len, Y):
         a = sim1[idx[~selected]]
         b = sim2[idx[~selected]]
         b = b[:,idx[selected]].max()
-        pick = (Y * a - (1-Y) * b).argmax()
+        # following line is very subtle
+        # argmax computes index out of selected items e.g. (3, 5, 2) index 1
+        # use argmax index to select actual index in index array
+        # (3, 5, 2)[1] == 5
+        pick = idx[~selected][(Y * a - (1-Y) * b).argmax()]
         selected[pick] = True
         summr_len += text_lens[pick]
     summr = text[idx[selected]]
