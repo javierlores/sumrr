@@ -15,6 +15,8 @@ from gensim.models import Word2Vec
 # load Word2Vec
 w2v = Word2Vec.load('Corpus/word.embedding')
 
+DIM = 300
+
 # extracted from average char length of human summaries
 SUMMARY_LENGTH = 650
 
@@ -46,7 +48,7 @@ def parse(filepath):
         words = [word for word in words if word not in stopwords and word.isalnum()]
         words = [w2v[word] for word in words if word in w2v]
         if not words:
-            words = [np.zeros(100), np.zeros(100)]
+            words = [np.zeros(DIM), np.zeros(DIM)]
         words = reduce(lambda x, y: x + y, words)
         features.append(words)
     return sentences, features
@@ -75,7 +77,7 @@ def summarize(casepath, sum_len, Y):
 
     # term weighting - IDF
     tf = mat
-    idf = np.log(float(mat.shape[1]) / ((mat != 0).sum(axis=0) + 1))
+    idf = np.log(float(mat.shape[1]) / (mat.sum(axis=0) + 1)**0.5)
     mat = tf * idf
 
     # MMR
