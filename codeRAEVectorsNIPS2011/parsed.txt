@@ -1,0 +1,29 @@
+(ROOT
+  (S (`` ``)
+    (S
+      (NP (PRP It))
+      (VP (VBZ 's)
+        (NP
+          (NP (DT a) (NN psychology))
+          (VP (VBN formed)
+            (PP (IN during)
+              (NP (DT the) (JJ socialist) (NN period)))))))
+    (PRN (, ,) ('' '')
+      (SINV
+        (VP (VBD said))
+        (NP
+          (NP (NNP Tatiana) (NNP Pashkova))
+          (, ,)
+          (NP
+            (NP (DT the) (JJ deputy) (NN spokeswoman))
+            (PP (IN for)
+              (NP (DT the) (NN ministry))))))
+      (, ,) (`` ``))
+    (CC and)
+    (S
+      (NP (DT the) (JJ same) (NN situation))
+      (VP (VBZ exists)
+        (PP (IN with)
+          (NP (DT the) (NNP Post) (NNP Office)))))
+    (. .)))
+
