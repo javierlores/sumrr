@@ -11,11 +11,11 @@ it is implemented properly.
 
 Current ROUGE scores
 
-| | F_Score | Precision | Recall |
+| | Precision | Precision | F Score |
 |---|---:|---:|---:|
-|ROUGE 1   | 0.349120 | 0.355460 | 0.345130
-|ROUGE 2   | 0.076890 | 0.078720 | 0.075770
-|ROUGE su4 | 0.118160 | 0.120600 | 0.116640
+| ROUGE 1   | 0.360200 | 0.363660 | 0.361890 |
+| ROUGE 2   | 0.086020 | 0.086990 | 0.086490 |
+| ROUGE su4 | 0.125500 | 0.126780 | 0.126120 |
 
 Todo
 ---

@@ -25,9 +25,9 @@ if __name__ == "__main__":
     rouge_output = rouge.evaluate()    
     output_dict = rouge.output_to_dict(rouge_output)
 
-    print "          F_Score     Precision   Recall"
-    print "ROUGE 1   %f    %f    %f" % (output_dict['rouge_1_f_score'], output_dict['rouge_1_precision'], output_dict['rouge_1_recall'])
-    print "ROUGE 2   %f    %f    %f" % (output_dict['rouge_2_f_score'], output_dict['rouge_2_precision'], output_dict['rouge_2_recall'])
-    print "ROUGE su4 %f    %f    %f" % (output_dict['rouge_su4_f_score'], output_dict['rouge_su4_precision'], output_dict['rouge_su4_recall'])
+    print "          Precision     Precision   F Score"
+    print "ROUGE 1   %f    %f    %f" % (output_dict['rouge_1_precision'], output_dict['rouge_1_recall'], output_dict['rouge_1_f_score'])
+    print "ROUGE 2   %f    %f    %f" % (output_dict['rouge_2_precision'], output_dict['rouge_2_recall'], output_dict['rouge_2_f_score'])
+    print "ROUGE su4 %f    %f    %f" % (output_dict['rouge_su4_precision'], output_dict['rouge_su4_recall'], output_dict['rouge_su4_f_score'])
     
     # print json.dumps(output_dict, indent=2, sort_keys=True)
